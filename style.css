@@ -7,19 +7,19 @@ body {
     align-items: center;
 }
 
-#canvas {
+#board {
     position: absolute;
 }
 
 #start {
-    position: absolute;
     z-index: 10;
-    background: #ff0066;
+    padding: 15px 30px;
+    font-size: 22px;
+    border: none;
+    background: #ff4fa3;
     color: white;
-    padding: 16px 28px;
     border-radius: 12px;
     cursor: pointer;
-    font-size: 22px;
     transition: .3s;
 }
 

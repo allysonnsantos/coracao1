@@ -65,7 +65,6 @@ function animate() {
         ctx.fill();
     });
 
-    // quando forma o coração, aparece o texto
     if (formed) {
         message.style.opacity = 1;
         replayBtn.style.display = "block";
@@ -74,8 +73,10 @@ function animate() {
 
 startBtn.addEventListener("click", async () => {
     startBtn.style.display = "none";
-    
-    audioContext = new AudioContext();
+
+    // Criar AudioContext APÓS interação humana (obrigatório)
+    if (!audioContext) audioContext = new AudioContext();
+
     const source = audioContext.createMediaElementSource(audio);
 
     analyser = audioContext.createAnalyser();
@@ -85,7 +86,13 @@ startBtn.addEventListener("click", async () => {
     source.connect(analyser);
     analyser.connect(audioContext.destination);
 
-    await audio.play();
+    audio.volume = 1.0;
+
+    audio.play().catch(err => {
+        alert("⚠️ Clique novamente — o navegador bloqueou o áudio.");
+        console.warn(err);
+    });
+
     animate();
 });
 
@@ -94,4 +101,6 @@ replayBtn.addEventListener("click", () => {
     replayBtn.style.display = "none";
     audio.currentTime = 0;
     resetParticles();
+
+    audio.play().catch(() => {});
 });

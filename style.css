@@ -12,14 +12,15 @@ body {
 }
 
 #start {
+    position: absolute;
     z-index: 10;
     background: #ff0066;
     color: white;
     padding: 16px 28px;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 22px;
-    transition: 0.3s;
+    transition: .3s;
 }
 
 #start:hover {

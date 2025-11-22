@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: black;
+    font-family: Arial, sans-serif;
+}
+
+canvas {
+    display: block;
+}
+
+#start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 0, 80, 0.9);
+    padding: 20px 40px;
+    font-size: 22px;
+    color: white;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+#message {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 80px;
+    font-size: 32px;
+    color: white;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+#replay {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px 26px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgba(255, 0, 80, 0.9);
+    color: white;
+    display: none;
+}
